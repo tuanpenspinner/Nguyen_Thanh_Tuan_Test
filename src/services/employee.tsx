@@ -46,7 +46,6 @@ export const getEmployee = (id: number) => {
 
 export const getEmployees = () => {
   const employees = localStorage.getItem('employees') || '[]';
-  console.log('employees', employees);
 
   const employeesParse = JSON.parse(employees);
   if (!Array.isArray(employeesParse)) {

@@ -54,7 +54,6 @@ const CreateEditEmployee: React.FC<ICreateEditEmployeeProps> = (props) => {
     if (isEdit) {
       const employee = getEmployee(Number(id));
       if (employee) {
-        console.log(employee);
         form.setFieldsValue({
           ...employee,
           positions: employee?.positions?.map((position: any) => {
