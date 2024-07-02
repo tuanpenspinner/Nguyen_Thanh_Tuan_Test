@@ -1,5 +1,6 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { Select, SelectProps } from 'antd';
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { IPositionResources } from '../interfaces/employee';
 interface IPositionSelectorProps extends SelectProps {
   positions: IPositionResources[];
