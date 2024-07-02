@@ -5,7 +5,7 @@ export const getPositionResources = () => {
 };
 
 export const createEmployee = (employee: unknown) => {
-  const employees = localStorage.getItem('employees') || '';
+  const employees = localStorage.getItem('employees') || '[]';
   const employeesParse = JSON.parse(employees);
   if (!Array.isArray(employeesParse)) {
     localStorage.setItem('employees', JSON.stringify([employee]));
@@ -16,7 +16,7 @@ export const createEmployee = (employee: unknown) => {
 };
 
 export const editEmployee = (id: number, employee: unknown) => {
-  const employees = localStorage.getItem('employees') || '';
+  const employees = localStorage.getItem('employees') || '[]';
   const employeesParse = JSON.parse(employees);
   if (Array.isArray(employeesParse)) {
     employeesParse[id] = employee;
@@ -26,7 +26,7 @@ export const editEmployee = (id: number, employee: unknown) => {
 };
 
 export const removeEmployee = (id: number) => {
-  const employees = localStorage.getItem('employees') || '';
+  const employees = localStorage.getItem('employees') || '[]';
   const employeesParse = JSON.parse(employees);
   if (Array.isArray(employeesParse)) {
     employeesParse.splice(id, 1);
@@ -36,7 +36,7 @@ export const removeEmployee = (id: number) => {
 };
 
 export const getEmployee = (id: number) => {
-  const employees = localStorage.getItem('employees') || '';
+  const employees = localStorage.getItem('employees') || '[]';
 
   const employeesParse = JSON.parse(employees);
   if (Array.isArray(employeesParse)) {
@@ -45,7 +45,8 @@ export const getEmployee = (id: number) => {
 };
 
 export const getEmployees = () => {
-  const employees = localStorage.getItem('employees') || '';
+  const employees = localStorage.getItem('employees') || '[]';
+  console.log('employees', employees);
 
   const employeesParse = JSON.parse(employees);
   if (!Array.isArray(employeesParse)) {
